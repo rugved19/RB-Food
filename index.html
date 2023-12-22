@@ -108,35 +108,43 @@
     </div>
 
     
+      
     <div class="box-container">
 
-      <a href="D:\z2nd page menu rb food\2pgburger\2pgburger.html" class="box">
+      <swiper-container class="mySwiper" navigation="true">
+      <swiper-slide>
+      <a href="" class="box">
         <img src="image/menu-1.png" alt="">
         <div class="content">
           <h3>Burger</h3>
           <div class="price"></div>
       </div>
-    
-     </a>
-
+      </a>
+    </swiper-slide>
       
-      <a href="D:\z2nd page menu rb food\2pgpizza\2pgpizza.html" class="box">
+    <swiper-slide>
+      <a href="" class="box">
         <img src="image/menu-2.png" alt="">
         <div class="content">
           <h3>Pizza</h3>
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
-      
-      <a href="D:\z2nd page menu rb food\2pgrolls\2pgrolls.html" class="box">
+  
+    <swiper-slide>
+      <a href="" class="box">
         <img src="image/menu-3.png" alt="">
         <div class="content">
           <h3>Rolls</h3>
           <div class="price"></div>
         </div>
-      </a>
+    </a>
+  </swiper-slide>
 
+
+  <swiper-slide>
       <a href="#" class="box">
         <img src="image/menu-4.png" alt="">
         <div class="content">
@@ -144,7 +152,10 @@
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
+
+    <swiper-slide>
       <a href="#" class="box">
         <img src="image/menu-5.png" alt="">
         <div class="content">
@@ -152,7 +163,10 @@
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
+
+    <swiper-slide>
       <a href="#" class="box">
         <img src="image/menu-6.png" alt="">
         <div class="content">
@@ -160,7 +174,10 @@
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
+
+    <swiper-slide>
       <a href="#" class="box">
         <img src="image/menu-7.png" alt="">
         <div class="content">
@@ -168,7 +185,10 @@
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
+
+    <swiper-slide>
       <a href="#" class="box">
         <img src="image/menu-8.png" alt="">
         <div class="content">
@@ -176,7 +196,11 @@
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
+
+
+    <swiper-slide>
       <a href="#" class="box">
         <img src="image/menu-9.png" alt="">
         <div class="content">
@@ -184,7 +208,10 @@
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
+
+    <swiper-slide>
       <a href="#" class="box">
         <img src="image/menu-9.png" alt="">
         <div class="content">
@@ -192,7 +219,10 @@
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
+     
+    <swiper-slide>
       <a href="#" class="box">
         <img src="image/menu-9.png" alt="">
         <div class="content">
@@ -200,7 +230,11 @@
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
+
+
+    <swiper-slide>
       <a href="#" class="box">
         <img src="image/menu-9.png" alt="">
         <div class="content">
@@ -208,11 +242,13 @@
           <div class="price"></div>
         </div>
       </a>
+    </swiper-slide>
 
 
 
     </div>
   </div>
+</swiper-container>
 
   </section> 
 
@@ -694,6 +730,7 @@
 
   <!-- custom js file link  -->
   <script src="js/script.js">
+    
 
 
     let navbar = document.querySelector('.header .navbar');
@@ -746,6 +783,36 @@
       }
     });
   </script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+<script>
+  const swiperEl = document.querySelector('swiper-container')
+  Object.assign(swiperEl, {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      300: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      600: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      1000: {
+        slidesPerView: 6,
+        spaceBetween: 10,
+      },
+    },
+  });
+  swiperEl.initialize();
+</script>
 
 </body>
 

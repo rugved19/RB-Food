@@ -702,7 +702,7 @@ section {
     }
 }
 
-.swiper-container {
+ /* .swiper-container {
     position: relative;
     width: 400px;
     height: 200px;
@@ -726,7 +726,7 @@ section {
     object-fit: cover;
 
 
-}
+} */
 
 /* Add this class to initiate the swipe animation */
 .swipe {
@@ -750,5 +750,30 @@ section {
         transform: translateX(0);
     }
 }
+
+
+
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
 /*# sourceMappingURL=style.css.map */
