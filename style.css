@@ -100,7 +100,7 @@ section {
 
 .header .logo i {
     padding-right: .5rem;
-    color: #27ae60;
+    color: red;
 }
 
 .header .navbar a {
