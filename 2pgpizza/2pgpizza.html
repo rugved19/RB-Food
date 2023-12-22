@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RB Food</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+        :root {
+            --green: #27ae60;
+            --black: #192a56;
+            --light-color: #666;
+            --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+        }
+
+        * {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 5.5rem;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            padding: 2rem 9%;
+        }
+
+        section:nth-child(even) {
+            background: #eee;
+        }
+
+        .sub-heading {
+            text-align: center;
+            color: var(--green);
+            font-size: 2rem;
+            padding-top: 1rem;
+        }
+
+        .heading {
+            text-align: center;
+            color: var(--black);
+            font-size: 3rem;
+            padding-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem 9%;
+}
+
+.header .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #130f40;
+}
+
+.header .logo i {
+  padding-right: .5rem;
+  color: #27ae60;
+}
+
+.header .navbar a {
+  font-size: 1.7rem;
+  margin: 0 1rem;
+  color: #666;
+}
+
+.header .navbar a:hover {
+  color: #27ae60;
+  
+}
+
+.header .icons div {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  background: #f7f7f7;
+  color: #130f40;
+  border-radius: .5rem;
+  margin-left: .3rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.header .icons div:hover {
+  color: #fff;
+  background: #27ae60;
+}
+
+#menu-btn {
+  display: none;
+}
+
+@-webkit-keyframes fadeUp {
+  0% {
+    -webkit-transform: translateY(5rem);
+            transform: translateY(5rem);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    -webkit-transform: translateY(5rem);
+            transform: translateY(5rem);
+    opacity: 0;
+  }
+}
+
+
+        .btn {
+            margin-top: 1rem;
+            display: inline-block;
+            font-size: 1.7rem;
+            color: #fff;
+            background: var(--black);
+            border-radius: .5rem;
+            cursor: pointer;
+            padding: .8rem 2rem;
+        }
+
+        .btn:hover {
+            background: var(--green);
+            letter-spacing: .1rem;
+        }
+
+        
+        .menu .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 1.5rem;
+        }
+
+        .menu .box-container .box {
+            background: #fff;
+            border: .1rem solid rgba(0, 0, 0, .2);
+            border-radius: .5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .menu .box-container .box .image {
+            height: 25rem;
+            width: 100%;
+            padding: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu .box-container .box .image img {
+            height: 100%;
+            width: 100%;
+            border-radius: .5rem;
+            object-fit: cover;
+        }
+
+        .menu .box-container .box .image .fa-heart {
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            height: 5rem;
+            width: 5rem;
+            line-height: 5rem;
+            text-align: center;
+            font-size: 2rem;
+            background: #fff;
+            border-radius: 50%;
+            color: var(--black);
+        }
+
+        .menu .box-container .box .image .fa-heart:hover {
+            background-color: var(--red);
+            color: red;
+        }
+
+        .menu .box-container .box .content {
+            padding: 2rem;
+            padding-top: 0;
+        }
+
+        .menu .box-container .box .content .stars {
+            padding-bottom: 1rem;
+        }
+
+        .menu .box-container .box .content .stars i {
+            font-size: 1.4rem;
+            color: var(--green);
+        }
+
+        .menu .box-container .box .content h3 {
+            color: var(--black);
+            font-size: 2.2rem;
+        }
+
+        .menu .box-container .box .content p {
+            color: var(--light-color);
+            font-size: 1.6rem;
+            padding: .5rem 0;
+            line-height: 1.5;
+        }
+
+        .menu .box-container .box .content .price {
+            color: var(--green);
+            margin-left: 1rem;
+            font-size: 2rem;
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-utensils"></i> RB Food </a>
+    
+    <nav class="navbar">
+        <a href="#home"></a>
+        <a href="#about"></a>
+        <a href="#popular"></a>
+        <a href="#menu"></a>
+        <a href="#order"></a>
+        
+		
+    </nav>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="social" class="fas fa-search"></div>
+        <div id="social" class="fas fa-shopping-cart"></div>
+		
+		
+        
+    </div>
+    
+</header>
+
+<!-- header section ends  -->
+
+    <!-- menu section starts  -->
+
+    <section class="menu" id="menu">
+
+        <h3 class="sub-heading">Foodies Choose Your Favourit</h3>
+        <h1 class="heading"> Pizza Lovers </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/margherita.90f9451fd66871fb6f9cf7d506053f18.1.jpg" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+				
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 52 Rating </span>
+                    </div>
+                    <h3>Margherita Pizza</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/81fbe5f6e8576cc7bdae699c3900197c" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Peppy Paneer Pizza</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ed6a84173f69cdd4f676e94c2332c5e7" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Classic Onion Capsicum</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+			
+			
+			<div class="box">
+                <div class="image">
+                    <img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/veggie-feast.3777f9846c8e993276a25838b8737ea7.1.jpg" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Veggie Feast</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/c375e9a628bc7110e06a2b379c0a8b3c" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Non Veg Loaded</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/f7ef8df0fed856ee03c983f156fbb68d" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Farmhouse Pizza</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+			
+			
+			<div class="box">
+                <div class="image">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/qgifc0xjqohk4voxoihv" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Tandoori Paneer Tikka Semizza (Half Pizza)</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/9afd83812df063abadf4b0392e142507" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Double Chicken Feast Pizza (Medium Pizza)</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://lh3.googleusercontent.com/Cst1b2LCSsuCJmUWRBIOiwPU2p-d8uZ1UuWy-AOceeOZQC0zbrBWx7HyMX_tQeo_7SK0JsLdmtipZMCmn9PD9ovvZ9tmE4-et3ktVQI=w200-rw" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Sizzling Schezwan Chicken Pizza</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+			
+			
+			<div class="box">
+                <div class="image">
+                    <img src="D:\z2nd page menu rb food\2pgpizza\pizza-10.png" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Chicken Supreme </h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="D:\z2nd page menu rb food\2pgpizza\pizza-11.png" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>My Box-Non Veg </h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="D:\z2nd page menu rb food\2pgpizza\pizza-12.png" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Chicken Sausage </h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+			
+			
+			<div class="box">
+                <div class="image">
+                    <img src="D:\z2nd page menu rb food\2pgpizza\pizza-13.png" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>My Box - Veg </h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="D:\z2nd page menu rb food\2pgpizza\pizza-14.png" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3>Mexican Green Wave Pizza</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="D:\z2nd page menu rb food\2pgpizza\pizza-15.png" alt="">
+                    <a href="#" class="fas fa-heart"></a>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+						<span> 49 Rating </span>
+                    </div>
+                    <h3> Indi Tandoori Paneer Pizza</h3>
+                    <p></p>
+					<span class="price">Rs 179.00</span><br>
+                    <a href="#" class="btn">add to cart</a>
+                    
+                </div>
+            </div>
+
+            
+
+        </div>
+
+    </section>
+
+    <!-- menu section ends -->
+
+    
+
+   
+
+
+
+          
+		  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+    <script>
+        let menu = document.querySelector('#menu-bars');
+        let navbar = document.querySelector('.navbar');
+
+        menu.onclick = () => {
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        }
+
+        let section = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header .navbar a');
+
+        window.onscroll = () => {
+
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+
+            section.forEach(sec => {
+
+                let top = window.scrollY;
+                let height = sec.offsetHeight;
+                let offset = sec.offsetTop - 150;
+                let id = sec.getAttribute('id');
+
+                if (top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header .navbar a[href*=' + id + ']').classList.add('active');
+                    });
+                };
+
+            });
+
+        }
+
+        document.querySelector('#search-icon').onclick = () => {
+            document.querySelector('#search-form').classList.toggle('active');
+        }
+
+        document.querySelector('#close').onclick = () => {
+            document.querySelector('#search-form').classList.remove('active');
+        }
+
+        var swiper = new Swiper(".home-slider", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 7500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            loop: true,
+        });
+
+        var swiper = new Swiper(".review-slider", {
+            spaceBetween: 20,
+            centeredSlides: true,
+            autoplay: {
+                delay: 7500,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        function loader() {
+            document.querySelector('.loader-container').classList.add('fade-out');
+        }
+
+        function fadeOut() {
+            setInterval(loader, 3000);
+        }
+
+        window.onload = fadeOut
+
+
+           </body> 
+		
+		</html>
