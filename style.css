@@ -302,7 +302,7 @@ section {
 
 .popular .box-container .box {
     border-radius: .5rem;
-    position: relative;
+    position: relative ;
     background: #f7f7f7;
     padding: 2rem;
     text-align: center;
@@ -312,7 +312,7 @@ section {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #666;
     cursor: pointer;
 }
@@ -336,7 +336,7 @@ section {
 
 .popular .box-container .box .content .stars {
     padding: 1rem 0;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
 }
 
 .popular .box-container .box .content .stars i {
